@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<title>Channel info</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/channel-info.js"></script>
+	
+	<script type="text/javascript">
+		document.addEventListener("deviceready",onDeviceReady,false);
+		document.addEventListener("DOMContentLoaded",onDeviceReady,false);
+		function onDeviceReady() {
+			initDatabase();
+		}
+	</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12" ng-controller="ChannelListController">
+				<h3>Channel Info</h3>
+				<fieldset>
+					<legend>Add</legend>
+					
+					<form class="form-horizontal">
+						<div class="control-group">
+							<label class="control-label" for="inputName">Name</label>
+							<div class="controls">
+								<input type="text" id="inputName" ng-model="FormChannelName" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="inputNumber">Number</label>
+							<div class="controls">
+								<input type="password" id="inputNumber" ng-model="FormChannelNumber" />
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button type="submit" class="btn" ng-click="addChannel()">Add</button>
+							</div>
+						</div>
+					</form>
+				</fieldset>
+				<form class="form-search">
+					<input type="text" class="input-medium search-query" />
+					<button type="submit" class="btn">Search</button>
+				</form>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Number</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="channel in channels">
+							<td>{{channel.name}}</td>
+							<td>{{channel.number}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
