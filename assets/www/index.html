@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
 	<meta charset="utf-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 	<title>Channel info</title>
 	<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css"/>
-	<script src="require.js" data-main="main.js"></script>
+	<script src="jquery.js"></script>
+	<script src="jquery.mobile.js"></script>
 </head>
 <body>
-	<div data-role="page">
-		<div data-role="header">Channel Info</div>
-		<div data-role="content" ng-controller="ChannelListController">
+	<div data-role="page" data-theme="e" data-content-theme="e">
+		<div data-role="header"><h1>Channel Info</h1></div>
+		<div data-role="content">
 			<ul data-role="listview" data-inset="true" data-filter="true">
-				<li ng-repeat="channel in channels">{{channel.name}} - {{channel.number}}</li>
+				<li>BTV -- 1</li>
+				<li>ATN -- 2</li>
+				<li>Channel Eye -- 3</li>
 			</ul>
 		</div>
 	</div>
