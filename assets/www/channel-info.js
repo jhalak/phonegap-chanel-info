@@ -22,14 +22,21 @@ function getDatabase() {
 }
 
 function ChannelListController($scope) {
+	/*
 	var db = getDatabase();
 	var id, rows;
 	db.transaction(function(tx){
 		tx.executeSql("SELECT * FROM INFO", [], function(tx, results){
+			var channels = [];
 			id = parseInt(results.rows.length + 1);
+			for (var i = 0; i < results.rows.length; i++) {
+				channels.push(results.rows.item(i));
+			}
+			rows = channels;
+			console.log(rows);
 		});
 	});
-	
+	*/
 	$scope.channels = [
 	    {name: "BTV", number: 1},
 	    {name: "ETV", number: 2}
